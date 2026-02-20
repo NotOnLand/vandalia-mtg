@@ -110,6 +110,10 @@ header {
   padding-bottom: 0;
   background-color: #16421c;
   font-size: 1.1em;
+  position: sticky;
+  top: -6.4rem;
+  z-index: 1;
+  border-bottom: 2px var(--primary-bg-color) solid;
 }
 
 .widthbox {
@@ -130,17 +134,64 @@ header div.widthbox {
   margin-right: .5rem;
 }
 
-h1, h2 {
-  font-family: 'Beleren', sans-serif;
+h1, .subtitle {
+  font-family: 'Beleren', serif;
   margin: -.2em 0;
 }
 
-header h2 {
+.subtitle {
   font-size: 1.33em;
 }
 
 article {
-  padding: 0 2rem;
+  background-color: var(--primary-bg-color);
+  padding: 0 2rem 2rem;
+}
+
+.faction {
+  margin-bottom: 1rem;
+}
+
+.faction::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.faction > span {
+  display: inline-block;
+  font-size: 1.5em;
+}
+
+.faction > span > span {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.faction > span h3 {
+  display: inline-block;
+}
+
+.faction i.ms {
+  font-size: .8em;
+  margin: 0 .1rem 0;
+  vertical-align:
+baseline;
+}
+
+.faction .card {
+  max-width: 300px;
+  float: right;
+  margin: .6rem -.6rem .6rem .6rem;
+}
+
+.faction:nth-of-type(even) .card {
+  margin: .6rem .6rem .6rem -.6rem;
+  float: left;
+}
+
+img.card {
+  border-radius: 4%;
 }
 
 footer {
@@ -155,21 +206,70 @@ footer p {
   color: rgba(255, 255, 255, 0.5);
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
+td, th {
+  padding: 8px;
+}
+
+th {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  text-align: left;
+  background-color: #16421c;
+  color: white;
+}
+
+td:not(:last-child), th:not(:last-child) {
+  width: 1%;
+  white-space: nowrap;
+}
+
+tr:nth-child(odd){
+  background-color: rgba(255,255,255, 0.1);
+}
+
+tr:hover {
+  background-color: rgba(255,255,255, 0.3);
+}
+
+
+th h3 {
+  margin: .8rem 0;
+}
+
+.faction h3 {
+  margin: .1rem;
+
+}
 
 @media (max-width: 675px) {
   .widthbox {
     width: 100%;
   }
+
 }
 
 @media (max-width: 550px) {
   header {
-    padding: 4vw 7vw;
+    padding: 4vw 1vw 0;
     font-size: 3vw;
+    top: -16vw;
+  }
+  header div.widthbox {
+    margin-left: 6vw;
+    margin-right: 6vw;
   }
   .headerimg {
     height: 9vw;
+  }
+  .faction .card {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
   footer {
     padding: 4vw 7vw;
