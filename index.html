@@ -2,18 +2,23 @@
 <html class="no-js" lang="">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--
+Source - https://stackoverflow.com/a/76079249
+Posted by iorgu, modified by community. See post 'Timeline' for change history
+Retrieved 2026-02-22, License - CC BY-SA 4.0
+-->
+
+<meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, target-densitydpi=device-dpi">
   <title>Vandalia: Haunted Hollers</title>
-  <link rel="stylesheet" href="docs/css/style.css">
   <meta name="description" content="An Appalachia themed custom MTG set">
 
   <link rel="icon" href="docs/img/favicon.ico" sizes="any">
   <link rel="icon" href="docs/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="docs/img/icon.png">
 
-  <link rel="stylesheet" type="docs/text/css" href="docs/tooltipster/dist/css/tooltipster.bundle.min.css" />
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="docs/tooltipster/dist/js/tooltipster.bundle.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="docs/css/tippy.css">
+  <script src="docs/js/popper.js"></script>
+  <script src="docs/js/tippy.js"></script>
 
   <link rel="stylesheet" type="text/css" href="docs/css/tabby-ui.css">
   <script src="docs/js/tabby.min.js"></script>
@@ -21,6 +26,9 @@
   <link href="docs/css/mana.css" rel="stylesheet" type="text/css" />
   <link rel="manifest" href="docs/site.webmanifest">
   <meta name="theme-color" content="#34613a">
+
+  <link rel="stylesheet" href="docs/css/style.css">
+
 </head>
 <body>
   <div id="page">
@@ -36,214 +44,375 @@
       <nav class="widthbox"><ul data-tabs>
       	<li><a href="#info">Home</a></li>
         <li><a href="#mechanics">Mechanics</a></li>
-      	<li><a data-tabby-default href="#lore">Lore</a></li>
-      	<li><a href="#archetypes">Archetypes</a></li>
+      	<li><a  href="#lore">Lore</a></li>
+      	<li><a data-tabby-default href="#archetypes">Archetypes</a></li>
         <li><a href="#cards">Cards</a></li>
       </ul></nav>
     </header>
 
-    <article><div class="widthbox">
+    <main><div class="widthbox">
 
-      <div id="info">
+      <article id="info">
         <h2>Set Info</h2>
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <p>This is blue mana <i class="ms ms-u ms-cost ms-shadow"></i> </p>
-      </div>
+        <p>Under Construction</p>
+        <img src="docs/img/under-construction.jpg">
+      </article>
 
-      <div id="lore">
-        <h2>World Lore</h2>
-        <p>info about vandalia here</p>
-
-        <h2>Factions</h2>
-        <div class="faction">
-          <span><h3>Wayfarer University </h3>
-          <span><i class="ms ms-w ms-cost"></i><i class="ms ms-u ms-cost "></i></span></span>
-          <img class="card" src="Z/Alexander, Guiding Voice.jpg">
-          <p>They like ghosts n stuff. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
-          <p>Cras sollicitudin leo porta nisi ultricies, nec tincidunt lacus rutrum. Praesent vel commodo metus. Nulla porttitor, arcu eget porttitor placerat, nunc nunc ultrices odio, eget efficitur massa enim ut urna. Cras dapibus risus ornare placerat varius. Aenean id quam ligula. Morbi sed imperdiet erat. Ut lacinia risus ac metus volutpat, eu mattis elit cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus hendrerit consectetur justo id hendrerit. Vestibulum gravida rhoncus mauris a pulvinar. Vestibulum efficitur orci vel efficitur malesuada. Phasellus ac ante ac est aliquam rhoncus id eu orci.</p>
-        </div>
-
-        <div class="faction">
-          <span><h3>Syndicate </h3>
-          <span><i class="ms ms-w ms-cost "></i><i class="ms ms-b ms-cost "></i> </span></span>
-          <img class="card" src="rare/Held for Ransom.jpg">
-          <p>Da gubmint. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
-          <p>Cras sollicitudin leo porta nisi ultricies, nec tincidunt lacus rutrum. Praesent vel commodo metus. Nulla porttitor, arcu eget porttitor placerat, nunc nunc ultrices odio, eget efficitur massa enim ut urna. Cras dapibus risus ornare placerat varius. Aenean id quam ligula. Morbi sed imperdiet erat. Ut lacinia risus ac metus volutpat, eu mattis elit cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus hendrerit consectetur justo id hendrerit. Vestibulum gravida rhoncus mauris a pulvinar. Vestibulum efficitur orci vel efficitur malesuada. Phasellus ac ante ac est aliquam rhoncus id eu orci.</p>
-        </div>
-
-        <div class="faction">
-          <span><h3>Bootleggers </h3>
-          <span><i class="ms ms-u ms-cost "></i><i class="ms ms-b ms-cost "></i></span></span>
-          <img class="card" src="Z/Bootlegger’s Buggy.jpg">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
-          <p>Cras sollicitudin leo porta nisi ultricies, nec tincidunt lacus rutrum. Praesent vel commodo metus. Nulla porttitor, arcu eget porttitor placerat, nunc nunc ultrices odio, eget efficitur massa enim ut urna. Cras dapibus risus ornare placerat varius. Aenean id quam ligula. Morbi sed imperdiet erat. Ut lacinia risus ac metus volutpat, eu mattis elit cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus hendrerit consectetur justo id hendrerit. Vestibulum gravida rhoncus mauris a pulvinar. Vestibulum efficitur orci vel efficitur malesuada. Phasellus ac ante ac est aliquam rhoncus id eu orci.</p>
-        </div>
-
-        <div class="faction">
-          <span><h3>Engineers </h3>
-          <span><i class="ms ms-u ms-cost "></i><i class="ms ms-r ms-cost "></i> </span></span>
-          <img class="card" src="Z/Chief Engineer Thompson.jpg">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
-          <p>Cras sollicitudin leo porta nisi ultricies, nec tincidunt lacus rutrum. Praesent vel commodo metus. Nulla porttitor, arcu eget porttitor placerat, nunc nunc ultrices odio, eget efficitur massa enim ut urna. Cras dapibus risus ornare placerat varius. Aenean id quam ligula. Morbi sed imperdiet erat. Ut lacinia risus ac metus volutpat, eu mattis elit cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus hendrerit consectetur justo id hendrerit. Vestibulum gravida rhoncus mauris a pulvinar. Vestibulum efficitur orci vel efficitur malesuada. Phasellus ac ante ac est aliquam rhoncus id eu orci.</p>
-        </div>
-
-        <div class="faction">
-          <span><h3>Ember Miners </h3>
-          <span><i class="ms ms-b ms-cost "></i><i class="ms ms-r ms-cost "></i></span></span>
-          <img class="card" src="R/Prepared Ember-Digger.jpg">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
-          <p>Cras sollicitudin leo porta nisi ultricies, nec tincidunt lacus rutrum. Praesent vel commodo metus. Nulla porttitor, arcu eget porttitor placerat, nunc nunc ultrices odio, eget efficitur massa enim ut urna. Cras dapibus risus ornare placerat varius. Aenean id quam ligula. Morbi sed imperdiet erat. Ut lacinia risus ac metus volutpat, eu mattis elit cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus hendrerit consectetur justo id hendrerit. Vestibulum gravida rhoncus mauris a pulvinar. Vestibulum efficitur orci vel efficitur malesuada. Phasellus ac ante ac est aliquam rhoncus id eu orci.</p>
-        </div>
-
-        <div class="faction">
-          <span><h3>Deepwoods Cryptids </h3>
-          <span><i class="ms ms-b ms-cost "></i><i class="ms ms-g ms-cost "></i> </span></span>
-          <img class="card" src="B/Not a Deer.jpg">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
-          <p>Cras sollicitudin leo porta nisi ultricies, nec tincidunt lacus rutrum. Praesent vel commodo metus. Nulla porttitor, arcu eget porttitor placerat, nunc nunc ultrices odio, eget efficitur massa enim ut urna. Cras dapibus risus ornare placerat varius. Aenean id quam ligula. Morbi sed imperdiet erat. Ut lacinia risus ac metus volutpat, eu mattis elit cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus hendrerit consectetur justo id hendrerit. Vestibulum gravida rhoncus mauris a pulvinar. Vestibulum efficitur orci vel efficitur malesuada. Phasellus ac ante ac est aliquam rhoncus id eu orci.</p>
-        </div>
-
-        <div class="faction">
-          <span><h3>Holler Elves </h3>
-          <span><i class="ms ms-r ms-cost "></i><i class="ms ms-g ms-cost "></i></span></span>
-          <img class="card" src="G/Ramp Farmers.jpg">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
-          <p>Cras sollicitudin leo porta nisi ultricies, nec tincidunt lacus rutrum. Praesent vel commodo metus. Nulla porttitor, arcu eget porttitor placerat, nunc nunc ultrices odio, eget efficitur massa enim ut urna. Cras dapibus risus ornare placerat varius. Aenean id quam ligula. Morbi sed imperdiet erat. Ut lacinia risus ac metus volutpat, eu mattis elit cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus hendrerit consectetur justo id hendrerit. Vestibulum gravida rhoncus mauris a pulvinar. Vestibulum efficitur orci vel efficitur malesuada. Phasellus ac ante ac est aliquam rhoncus id eu orci.</p>
-        </div>
-
-        <div class="faction">
-          <span><h3>Martial Brotherhood </h3>
-          <span><i class="ms ms-r ms-cost "></i><i class="ms ms-w ms-cost "></i> </span></span>
-          <img class="card" src="rare/Martial Prowess.jpg">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
-          <p>Cras sollicitudin leo porta nisi ultricies, nec tincidunt lacus rutrum. Praesent vel commodo metus. Nulla porttitor, arcu eget porttitor placerat, nunc nunc ultrices odio, eget efficitur massa enim ut urna. Cras dapibus risus ornare placerat varius. Aenean id quam ligula. Morbi sed imperdiet erat. Ut lacinia risus ac metus volutpat, eu mattis elit cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus hendrerit consectetur justo id hendrerit. Vestibulum gravida rhoncus mauris a pulvinar. Vestibulum efficitur orci vel efficitur malesuada. Phasellus ac ante ac est aliquam rhoncus id eu orci.</p>
-        </div>
-
-        <div class="faction">
-          <span><h3>Hunters </h3>
-          <span><i class="ms ms-g ms-cost "></i><i class="ms ms-w ms-cost "></i></span></span>
-          <img class="card" src="rare/Rallying Rangers.jpg">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
-          <p>Cras sollicitudin leo porta nisi ultricies, nec tincidunt lacus rutrum. Praesent vel commodo metus. Nulla porttitor, arcu eget porttitor placerat, nunc nunc ultrices odio, eget efficitur massa enim ut urna. Cras dapibus risus ornare placerat varius. Aenean id quam ligula. Morbi sed imperdiet erat. Ut lacinia risus ac metus volutpat, eu mattis elit cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus hendrerit consectetur justo id hendrerit. Vestibulum gravida rhoncus mauris a pulvinar. Vestibulum efficitur orci vel efficitur malesuada. Phasellus ac ante ac est aliquam rhoncus id eu orci.</p>
-        </div>
-
-        <div class="faction">
-          <span><h3>Kepler Foundation </h3>
-          <span><i class="ms ms-g ms-cost "></i><i class="ms ms-u ms-cost "></i> </span></span>
-          <img class="card" src="Z/Transmutation Specialist.jpg">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
-          <p>Cras sollicitudin leo porta nisi ultricies, nec tincidunt lacus rutrum. Praesent vel commodo metus. Nulla porttitor, arcu eget porttitor placerat, nunc nunc ultrices odio, eget efficitur massa enim ut urna. Cras dapibus risus ornare placerat varius. Aenean id quam ligula. Morbi sed imperdiet erat. Ut lacinia risus ac metus volutpat, eu mattis elit cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus hendrerit consectetur justo id hendrerit. Vestibulum gravida rhoncus mauris a pulvinar. Vestibulum efficitur orci vel efficitur malesuada. Phasellus ac ante ac est aliquam rhoncus id eu orci.</p>
-        </div>
-
-        <h2>Major Characters</h2>
-        <p>people</p>
-
-        <h2>Planeswalkers</h2>
-        <p>and the rest</p>
-
-      </div>
-
-      <div id="mechanics">
+      <article id="mechanics">
         <h2>New Mechanics</h2>
-        <p>info here</p>
+        <p>Vandalia adds a few new mechanics across all colors. Our goal from the start was to make them easy to remember, mesh well with existing Magic mechanics, and not cause too many rules hangups. Cards have reminder text whenever possible, although some are too wordy already.</p>
+        <ul>
+          <li><a href="#mech-embershard">Embershards</a></li>
+          <li><a href="#mech-innervate">Innervate</a></li>
+          <li><a href="#mech-shine">Embershine</a></li>
+          <li><a href="#mech-possess">Possession</a></li>
+          <li><a href="#mech-critter">Critters</a></li>
+        </ul>
 
-        <div class="faction">
-          <span><h3>Innervate</h3></span>
-          <img class="card" src="U/Energy Repurposing.jpg">
-          <p>Make stuff gooder. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
-        </div>
-
-        <div class="faction">
+        <section id="mech-embershard">
           <span><h3>Embershards</h3></span>
           <img class="card" src="tokens/Embershard (a).jpg">
           <p>Dig em up. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
-        </div>
+        </section>
 
-        <div class="faction">
+        <section id="mech-innervate">
+          <span><h3>Innervate</h3></span>
+          <img class="card" src="U/Energy Repurposing.jpg">
+          <p>Make stuff gooder. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
+        </section>
+
+        <section id="mech-shine">
           <span><h3>Embershine</h3></span>
           <img class="card" src="tokens/Shine (a).jpg">
           <p>boozohol. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
-        </div>
+        </section>
 
-        <div class="faction">
+        <section id="mech-possess">
           <span><h3>Possession</h3></span>
           <img class="card" src="W/Soul Displacer.jpg">
           <p>ghosts. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
-        </div>
-      </div>
+        </section>
 
-      <div id="archetypes">
+        <section id="mech-critter">
+          <span><h3>Critters</h3></span>
+          <img class="card" src="rare/Benevolent Bog Witch.jpg">
+          <p>little guys. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
+        </section>
+      </article>
+
+      <article id="lore">
+        <h2>World Lore</h2>
+        <p>info about vandalia here</p>
+
+        <div id="factions">
+          <h2>Factions</h2>
+          <nav id="faction-buttons" class="subnav">
+            <a href="#WU" class="active"><i class="ms ms-wu ms-cost ms-2x" >WU</i></a>
+            <a href="#WB"><i class="ms ms-wb ms-cost ms-2x" >WB</i></a>
+            <a href="#UB"><i class="ms ms-ub ms-cost ms-2x" >UB</i></a>
+            <a href="#UR"><i class="ms ms-ur ms-cost ms-2x" >UR</i></a>
+            <a href="#BR"><i class="ms ms-br ms-cost ms-2x" >BR</i></a>
+            <a href="#BG"><i class="ms ms-bg ms-cost ms-2x" >RG</i></a>
+            <a href="#RG"><i class="ms ms-rg ms-cost ms-2x" >BG</i></a>
+            <a href="#RW"><i class="ms ms-rw ms-cost ms-2x" >RW</i></a>
+            <a href="#GW"><i class="ms ms-gw ms-cost ms-2x" >GW</i></a>
+            <a href="#GU"><i class="ms ms-gu ms-cost ms-2x" >GU</i></a>
+          </nav>
+          <section id="WU" >
+            <span><h3>Wayfarer University </h3>
+            <span><i class="ms ms-w ms-cost"></i><i class="ms ms-u ms-cost "></i></span></span>
+            <img class="card" src="Z/Alexander, Guiding Voice.jpg">
+            <p>They like ghosts n stuff. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
+            <p>Cras sollicitudin leo porta nisi ultricies, nec tincidunt lacus rutrum. Praesent vel commodo metus. Nulla porttitor, arcu eget porttitor placerat, nunc nunc ultrices odio, eget efficitur massa enim ut urna. Cras dapibus risus ornare placerat varius. Aenean id quam ligula. Morbi sed imperdiet erat. Ut lacinia risus ac metus volutpat, eu mattis elit cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus hendrerit consectetur justo id hendrerit. Vestibulum gravida rhoncus mauris a pulvinar. Vestibulum efficitur orci vel efficitur malesuada. Phasellus ac ante ac est aliquam rhoncus id eu orci.</p>
+          </section>
+          <section id="WB" >
+            <span><h3>Syndicate </h3>
+            <span><i class="ms ms-w ms-cost "></i><i class="ms ms-b ms-cost "></i> </span></span>
+            <img class="card" src="rare/Held for Ransom.jpg">
+            <p>Da gubmint. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
+            <p>Cras sollicitudin leo porta nisi ultricies, nec tincidunt lacus rutrum. Praesent vel commodo metus. Nulla porttitor, arcu eget porttitor placerat, nunc nunc ultrices odio, eget efficitur massa enim ut urna. Cras dapibus risus ornare placerat varius. Aenean id quam ligula. Morbi sed imperdiet erat. Ut lacinia risus ac metus volutpat, eu mattis elit cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus hendrerit consectetur justo id hendrerit. Vestibulum gravida rhoncus mauris a pulvinar. Vestibulum efficitur orci vel efficitur malesuada. Phasellus ac ante ac est aliquam rhoncus id eu orci.</p>
+          </section>
+          <section id="UB" >
+            <span><h3>Bootleggers </h3>
+            <span><i class="ms ms-u ms-cost "></i><i class="ms ms-b ms-cost "></i></span></span>
+            <img class="card" src="Z/Bootlegger’s Buggy.jpg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
+            <p>Cras sollicitudin leo porta nisi ultricies, nec tincidunt lacus rutrum. Praesent vel commodo metus. Nulla porttitor, arcu eget porttitor placerat, nunc nunc ultrices odio, eget efficitur massa enim ut urna. Cras dapibus risus ornare placerat varius. Aenean id quam ligula. Morbi sed imperdiet erat. Ut lacinia risus ac metus volutpat, eu mattis elit cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus hendrerit consectetur justo id hendrerit. Vestibulum gravida rhoncus mauris a pulvinar. Vestibulum efficitur orci vel efficitur malesuada. Phasellus ac ante ac est aliquam rhoncus id eu orci.</p>
+          </section>
+          <section id="UR" >
+            <span><h3>Engineers </h3>
+            <span><i class="ms ms-u ms-cost "></i><i class="ms ms-r ms-cost "></i> </span></span>
+            <img class="card" src="Z/Chief Engineer Thompson.jpg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
+            <p>Cras sollicitudin leo porta nisi ultricies, nec tincidunt lacus rutrum. Praesent vel commodo metus. Nulla porttitor, arcu eget porttitor placerat, nunc nunc ultrices odio, eget efficitur massa enim ut urna. Cras dapibus risus ornare placerat varius. Aenean id quam ligula. Morbi sed imperdiet erat. Ut lacinia risus ac metus volutpat, eu mattis elit cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus hendrerit consectetur justo id hendrerit. Vestibulum gravida rhoncus mauris a pulvinar. Vestibulum efficitur orci vel efficitur malesuada. Phasellus ac ante ac est aliquam rhoncus id eu orci.</p>
+          </section>
+          <section id="BR" >
+            <span><h3>Ember Miners </h3>
+            <span><i class="ms ms-b ms-cost "></i><i class="ms ms-r ms-cost "></i></span></span>
+            <img class="card" src="R/Prepared Ember-Digger.jpg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
+            <p>Cras sollicitudin leo porta nisi ultricies, nec tincidunt lacus rutrum. Praesent vel commodo metus. Nulla porttitor, arcu eget porttitor placerat, nunc nunc ultrices odio, eget efficitur massa enim ut urna. Cras dapibus risus ornare placerat varius. Aenean id quam ligula. Morbi sed imperdiet erat. Ut lacinia risus ac metus volutpat, eu mattis elit cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus hendrerit consectetur justo id hendrerit. Vestibulum gravida rhoncus mauris a pulvinar. Vestibulum efficitur orci vel efficitur malesuada. Phasellus ac ante ac est aliquam rhoncus id eu orci.</p>
+          </section>
+          <section id="BG" >
+            <span><h3>Deepwoods Cryptids </h3>
+            <span><i class="ms ms-b ms-cost "></i><i class="ms ms-g ms-cost "></i> </span></span>
+            <img class="card" src="B/Not a Deer.jpg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
+            <p>Cras sollicitudin leo porta nisi ultricies, nec tincidunt lacus rutrum. Praesent vel commodo metus. Nulla porttitor, arcu eget porttitor placerat, nunc nunc ultrices odio, eget efficitur massa enim ut urna. Cras dapibus risus ornare placerat varius. Aenean id quam ligula. Morbi sed imperdiet erat. Ut lacinia risus ac metus volutpat, eu mattis elit cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus hendrerit consectetur justo id hendrerit. Vestibulum gravida rhoncus mauris a pulvinar. Vestibulum efficitur orci vel efficitur malesuada. Phasellus ac ante ac est aliquam rhoncus id eu orci.</p>
+          </section>
+          <section id="RG" >
+            <span><h3>Holler Elves </h3>
+            <span><i class="ms ms-r ms-cost "></i><i class="ms ms-g ms-cost "></i></span></span>
+            <img class="card" src="G/Ramp Farmers.jpg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
+            <p>Cras sollicitudin leo porta nisi ultricies, nec tincidunt lacus rutrum. Praesent vel commodo metus. Nulla porttitor, arcu eget porttitor placerat, nunc nunc ultrices odio, eget efficitur massa enim ut urna. Cras dapibus risus ornare placerat varius. Aenean id quam ligula. Morbi sed imperdiet erat. Ut lacinia risus ac metus volutpat, eu mattis elit cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus hendrerit consectetur justo id hendrerit. Vestibulum gravida rhoncus mauris a pulvinar. Vestibulum efficitur orci vel efficitur malesuada. Phasellus ac ante ac est aliquam rhoncus id eu orci.</p>
+          </section>
+          <section id="RW" >
+            <span><h3>Martial Brotherhood </h3>
+            <span><i class="ms ms-r ms-cost "></i><i class="ms ms-w ms-cost "></i> </span></span>
+            <img class="card" src="rare/Martial Prowess.jpg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
+            <p>Cras sollicitudin leo porta nisi ultricies, nec tincidunt lacus rutrum. Praesent vel commodo metus. Nulla porttitor, arcu eget porttitor placerat, nunc nunc ultrices odio, eget efficitur massa enim ut urna. Cras dapibus risus ornare placerat varius. Aenean id quam ligula. Morbi sed imperdiet erat. Ut lacinia risus ac metus volutpat, eu mattis elit cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus hendrerit consectetur justo id hendrerit. Vestibulum gravida rhoncus mauris a pulvinar. Vestibulum efficitur orci vel efficitur malesuada. Phasellus ac ante ac est aliquam rhoncus id eu orci.</p>
+          </section>
+          <section id="GW" >
+            <span><h3>Hunters </h3>
+            <span><i class="ms ms-g ms-cost "></i><i class="ms ms-w ms-cost "></i></span></span>
+            <img class="card" src="rare/Rallying Rangers.jpg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
+            <p>Cras sollicitudin leo porta nisi ultricies, nec tincidunt lacus rutrum. Praesent vel commodo metus. Nulla porttitor, arcu eget porttitor placerat, nunc nunc ultrices odio, eget efficitur massa enim ut urna. Cras dapibus risus ornare placerat varius. Aenean id quam ligula. Morbi sed imperdiet erat. Ut lacinia risus ac metus volutpat, eu mattis elit cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus hendrerit consectetur justo id hendrerit. Vestibulum gravida rhoncus mauris a pulvinar. Vestibulum efficitur orci vel efficitur malesuada. Phasellus ac ante ac est aliquam rhoncus id eu orci.</p>
+          </section>
+          <section id="GU" >
+            <span><h3>Kepler Foundation </h3>
+            <span><i class="ms ms-g ms-cost "></i><i class="ms ms-u ms-cost "></i> </span></span>
+            <img class="card" src="Z/Transmutation Specialist.jpg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
+            <p>Cras sollicitudin leo porta nisi ultricies, nec tincidunt lacus rutrum. Praesent vel commodo metus. Nulla porttitor, arcu eget porttitor placerat, nunc nunc ultrices odio, eget efficitur massa enim ut urna. Cras dapibus risus ornare placerat varius. Aenean id quam ligula. Morbi sed imperdiet erat. Ut lacinia risus ac metus volutpat, eu mattis elit cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus hendrerit consectetur justo id hendrerit. Vestibulum gravida rhoncus mauris a pulvinar. Vestibulum efficitur orci vel efficitur malesuada. Phasellus ac ante ac est aliquam rhoncus id eu orci.</p>
+          </section>
+          <script src="docs/js/scrolly.js"></script>
+        </div>
+
+        <div id="characters">
+          <h2>Major Characters</h2>
+          <p>people</p>
+          <section>
+            <span><h3>Dr. Stephen Kepler</h3>
+            <span><i class="ms ms-w ms-cost"></i><i class="ms ms-u ms-cost "></i></span></span>
+            <img class="card" src="mythic/Dr. Stephen Kepler, The Founder.jpg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
+          </section>
+          <section>
+            <span><h3>Johnny K</h3>
+            <span><i class="ms ms-w ms-cost"></i><i class="ms ms-u ms-cost "></i></span></span>
+            <img class="card" src="mythic/Johnny K, Master Distiller.jpg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
+          </section>
+          <section>
+            <span><h3>Henry Gunn</h3>
+            <span><i class="ms ms-w ms-cost"></i><i class="ms ms-u ms-cost "></i></span></span>
+            <img class="card" src="rare/Henry Gunn, Munitions Magnate.jpg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
+          </section>
+          <section>
+            <span><h3>Ophelia Gunn</h3>
+            <span><i class="ms ms-w ms-cost"></i><i class="ms ms-u ms-cost "></i></span></span>
+            <img class="card" src="mythic/Ophelia, Mournful Matriarch.jpg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
+          </section>
+          <section>
+            <span><h3>General Stier</h3>
+            <span><i class="ms ms-w ms-cost"></i><i class="ms ms-u ms-cost "></i></span></span>
+            <img class="card" src="mythic/General Stier, Taurean Tactician.jpg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
+          </section>
+          <section>
+            <span><h3>Silas</h3>
+            <span><i class="ms ms-w ms-cost"></i><i class="ms ms-u ms-cost "></i></span></span>
+            <img class="card" src="rare/Silas, Hunter General.jpg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
+          </section>
+        </div>
+
+        <div id="planeswalkers">
+          <h2>Planeswalkers</h2>
+          <p>and the rest</p>
+
+          <section>
+            <span><h3>Angrath</h3>
+            <span><i class="ms ms-w ms-cost"></i><i class="ms ms-u ms-cost "></i></span></span>
+            <img class="card" src="mythic/Angrath, Company Liberator.jpg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
+          </section>
+          <section>
+            <span><h3>Garruk</h3>
+            <span><i class="ms ms-w ms-cost"></i><i class="ms ms-u ms-cost "></i></span></span>
+            <img class="card" src="rare/Garruk, Glorious Hunter.jpg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
+          </section>
+          <section>
+            <span><h3>Indrid Cold</h3>
+            <span><i class="ms ms-w ms-cost"></i><i class="ms ms-u ms-cost "></i></span></span>
+            <img class="card" src="mythic/backs/Indrid Cold, the Smiling Man.jpg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae urna vitae ex fermentum blandit. Nulla ullamcorper ante quis neque sollicitudin, vel euismod elit feugiat. Nulla feugiat erat vel quam aliquam, ut porttitor libero cursus. Maecenas congue lacus ut lorem maximus ornare. Duis pretium velit lacus, tristique ullamcorper massa venenatis et. Quisque felis felis, cursus eget erat tincidunt, pharetra tempus mi. Nullam sollicitudin nibh diam, vel condimentum justo imperdiet pharetra. Suspendisse vehicula, elit at venenatis eleifend, augue dolor convallis mauris, a sagittis enim turpis id orci.</p>
+          </section>
+        </div>
+
+      </article>
+
+      <article id="archetypes">
         <h2>Archetypes</h2>
         <p>This is the archetypes tab</p>
         <table>
           <tr>
             <th></th>
-            <th><h3>Archetype</h3></th>
+            <th><h3>Arche&shy;type</h3></th>
             <th><h3>Description</h3></th>
           </tr>
           <tr>
             <td><i class="ms ms-w ms-cost ms-2x"></i><i class="ms ms-u ms-cost ms-2x"></i></td>
-            <td>Possession Tempo</td>
-            <td></td>
+            <td>Possess&shy;ion Tempo</td>
+            <td>words <a href="#mech-possess" onclick="tabs.toggle('#mechanics');">Possession</a>
+              <br>Key Cards:
+              <span data-tippy-content="<img src='W/Willing Host.jpg' class='card' >">Willing Host</span>,
+              <span data-tippy-content="<img src='Z/Wayfarer Acolyte.jpg' class='card' >">Wayfarer Acolyte</span>,
+              <span data-tippy-content="<img src='Z/Alexander, Guiding Voice.jpg' class='card' >">Alexander, Guiding Voice</span>,
+              <span data-tippy-content="<img src='mythic/Ophelia, Mournful Matriarch.jpg' class='card' >">Ophelia, Mournful Matriarch</span>
+            </td>
           </tr>
           <tr>
             <td><i class="ms ms-w ms-cost ms-2x"></i><i class="ms ms-b ms-cost ms-2x"></i></td>
             <td>Control through Brutality</td>
-            <td></td>
+            <td>words
+              <br>Key Cards:
+              <span data-tippy-content="<img src='B/Mandatory Conscription.jpg' class='card' >">Mandatory Conscription</span>,
+              <span data-tippy-content="<img src='Z/Ted Sinkerton, Lawman for Hire.jpg' class='card' >">Ted Sinkerton, Lawman for Hire</span>,
+              <span data-tippy-content="<img src='rare/Held for Ransom.jpg' class='card' >">Held for Ransom</span>,
+              <span data-tippy-content="<img src='rare/Syndicate Enforcer.jpg' class='card' >">Syndicate Enforcer</span>
+            </td>
           </tr>
           <tr>
             <td><i class="ms ms-u ms-cost ms-2x"></i><i class="ms ms-b ms-cost ms-2x"></i></td>
             <td>Vehicles & Shine</td>
-            <td></td>
+            <td>words <a href="#mech-shine" onclick="tabs.toggle('#mechanics');">Shine tokens</a>
+              <br>Key Cards:
+              <span data-tippy-content="<img src='B/Resourceful Shine-Runner.jpg' class='card' >">Resourceful Shine-Runner</span>,
+              <span data-tippy-content="<img src='Z/Bootlegger’s Buggy.jpg' class='card' >">Bootlegger's Buggy</span>,
+              <span data-tippy-content="<img src='U/Shiner’s Charm.jpg' class='card' >">Shiner's Charm</span>,
+              <span data-tippy-content="<img src='mythic/Johnny K, Master Distiller.jpg' class='card' >">Johnny K, Master Distiller</span>
+            </td>
           </tr>
           <tr>
             <td><i class="ms ms-u ms-cost ms-2x"></i><i class="ms ms-r ms-cost ms-2x"></i></td>
-            <td>Equipment Voltron</td>
-            <td></td>
+            <td>Equip&shy;ment Voltron</td>
+            <td>words <span data-tippy-content="<img src='tokens/Rifle.jpg' class='card' >">Rifle token</span>
+              <br>Key Cards:
+              <span data-tippy-content="<img src='U/Welding Goggles.jpg' class='card' >">Welding Goggles</span>,
+              <span data-tippy-content="<img src='Z/Artisan Rifle Carver.jpg' class='card' >">Artisan Rifle Carver</span>,
+              <span data-tippy-content="<img src='R/Armament Aficionado.jpg' class='card' >">Armament Aficionado</span>,
+              <span data-tippy-content="<img src='rare/Henry Gunn, Munitions Magnate.jpg' class='card' >">Henry Gunn, Munitions Magnate</span>
+            </td>
           </tr>
           <tr>
             <td><i class="ms ms-b ms-cost ms-2x"></i><i class="ms ms-r ms-cost ms-2x"></i></td>
-            <td>Artifact Sacrifice</td>
-            <td></td>
+            <td>Artifact Sacri&shy;fice</td>
+            <td>words <a href="#mech-emberhard" onclick="tabs.toggle('#mechanics');">Embershard tokens</a>
+              <br>Key Cards:
+              <span data-tippy-content="<img src='R/Prepared Ember-Digger.jpg' class='card' >">Prepared Ember-Digger</span>,
+              <span data-tippy-content="<img src='Z/Striking Instigator.jpg' class='card' >">Striking Instigator</span>,
+              <span data-tippy-content="<img src='R/Veteran Miner.jpg' class='card' >">Veteran Miner</span>,
+              <span data-tippy-content="<img src='B/Tenured Miner.jpg' class='card' >">Tenured Miner</span>
+            </td>
           </tr>
           <tr>
             <td><i class="ms ms-b ms-cost ms-2x"></i><i class="ms ms-g ms-cost ms-2x"></i></td>
             <td>Horror Tribal</td>
-            <td></td>
+            <td>words
+              <br>Key Cards:
+              <span data-tippy-content="<img src='B/Suspicious Owlhouette.jpg' class='card' >">Suspicious Owlhouette</span>,
+              <span data-tippy-content="<img src='Z/Wampus Polecat.jpg' class='card' >">Wampus Polecat</span>,
+              <span data-tippy-content="<img src='Z/Whistle in the Dark.jpg' class='card' >">Whistle in the Dark</span>,
+              <span data-tippy-content="<img src='rare/Cryptid Command.jpg' class='card' >">Cryptid Command</span>
+            </td>
           </tr>
           <tr>
             <td><i class="ms ms-r ms-cost ms-2x"></i><i class="ms ms-g ms-cost ms-2x"></i></td>
-            <td>Offspring and Stomp</td>
-            <td></td>
+            <td>Off&shy;spring and Stomp</td>
+            <td>words
+              <br>Key Cards:
+              <span data-tippy-content="<img src='G/Ramp Farmers.jpg' class='card' >">Ramp Farmers</span>,
+              <span data-tippy-content="<img src='Z/Holler Hollarer.jpg' class='card' >">Holler Hollarer</span>,
+              <span data-tippy-content="<img src='rare/Elvish Uncle-Cousin.jpg' class='card' >">Elvish Uncle-Cousin</span>,
+              <span data-tippy-content="<img src='mythic/Ballad of the Lovers’ Holler.jpg' class='card' >">Ballad of the Lovers' Holler</span>
+            </td>
           </tr>
           <tr>
             <td><i class="ms ms-r ms-cost ms-2x"></i><i class="ms ms-w ms-cost ms-2x"></i></td>
-            <td>Valiant Spellslinging</td>
-            <td></td>
+            <td>Valiant Spell&shy;slinging</td>
+            <td>words
+              <br>Key Cards:
+              <span data-tippy-content="<img src='Z/Taurean Rage.jpg' class='card' >">Taurean Rage</span>,
+              <span data-tippy-content="<img src='R/Brotherhood Ascension.jpg' class='card' >">Brotherhood Ascension</span>,
+              <span data-tippy-content="<img src='rare/Thunder of the Herd.jpg' class='card' >">Thunder of the Herd</span>,
+              <span data-tippy-content="<img src='mythic/General Stier, Taurean Tactician.jpg' class='card' >">General Stier, Taurean Tactician</span>
+            </td>
           </tr>
           <tr>
             <td><i class="ms ms-g ms-cost ms-2x"></i><i class="ms ms-w ms-cost ms-2x"></i></td>
-            <td>Food Stockpile</td>
-            <td></td>
+            <td>Food Stock&shy;pile</td>
+            <td>words
+              <br>Key Cards:
+              <span data-tippy-content="<img src='Z/Golden Delicacy.jpg' class='card' >">Golden Delicacy</span>,
+              <span data-tippy-content="<img src='W/Camp Chef.jpg' class='card' >">Camp Chef</span>,
+              <span data-tippy-content="<img src='G/Boastful Bear Wrestler.jpg' class='card' >">Boastful Bear Wrestler</span>,
+              <span data-tippy-content="<img src='rare/Silas, Hunter General.jpg' class='card' >">Silas, Hunter General</span>
+            </td>
           </tr>
           <tr>
             <td><i class="ms ms-g ms-cost ms-2x"></i><i class="ms ms-u ms-cost ms-2x"></i></td>
-            <td>Innovate and Innervate</td>
-            <td></td>
+            <td>Inno&shy;vate and Inner&shy;vate</td>
+            <td>words <a href="#mech-innervate" onclick="tabs.toggle('#mechanics');">Innervate</a>
+              <br>Key Cards:
+              <span data-tippy-content="<img src='U/Energy Repurposing.jpg' class='card' >">Energy Repurposing</span>,
+              <span data-tippy-content="<img src='Z/Transmutation Specialist.jpg' class='card' >">Transmutation Specialist</span>,
+              <span data-tippy-content="<img src='G/Otherworldly Emergence.jpg' class='card' >">Otherworldly Emergence</span>,
+              <span data-tippy-content="<img src='mythic\Dr. Stephen Kepler, The Founder.jpg' class='card' >">Dr. Stephen Kepler, The Founder</span>
+            </td>
+          </tr>
+          <tr>
+            <td><i class="ms ms-g ms-cost ms-2x"></i><i class="ms ms-ci ms-ci-4 ms-ci-wubr ms-3x"></i></td>
+            <td>Critter Storm</td>
+            <td>Overrun your opponents with <a href="#mech-critter" onclick="tabs.toggle('#mechanics');">critters</a> of all shapes and sizes, and bring glory to the woods! <em>(Critters are Possums, Rabbits, Raccoons, Squirrels, and Weasels.)</em> Although primarily in green, all colors have cards that create or synergize with critters in some way to go wide, tall, or both.
+            <br>Key Cards:
+            <span data-tippy-content="<img src='rare/Critterstorm.jpg' class='card' >">Critterstorm</span>,
+            <span data-tippy-content="<img src='rare/Benevolent Bog Witch.jpg' class='card' >">Benevolent Bog Witch</span>,
+            <span data-tippy-content="<img src='rare/Tarry, Raised by Squirrels.jpg' class='card' >">Tarry, Raised by Squirrels</span>
+            </td>
           </tr>
         </table>
-      </div>
+
+      </article>
 
 
-      <div id="cards">
+      <article id="cards">
         <h2>Cards</h2>
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <p>This is blue mana <i class="ms ms-u ms-cost ms-shadow"></i> </p>
-      </div>
-    </div></article>
+        <p>Under Construction</p>
+        <img src="docs/img/under-construction.jpg">
+      </article>
+    </div></main>
+
 
     <footer><div class="widthbox">
       <p>"Vandalia: Haunted Hollers" and all original concepts ©2026 Landon Pettit, Jack Boyce, and Sean Rose. "Magic: the Gathering," MTG, and all associated names, images, and concepts © 1995-2026 Wizards of the Coast LLC, a subsidiary of Hasbro, Inc. This site is not affiliated with Wizards of the Coast LLC or Hasbro. All Rights Reserved. All artwork is owned and credited to the original artist(s) of each. This derivative fan work is for entertainment purposes only and in no way infringes upon intellectual property or copyrights of aforementioned parties. All nonoriginal assets are utilized under Fair Use and we in no way claim authorship or ownership therein.</p>
+      <script>
+        tippy('[data-tippy-content]', {
+          allowHTML: true,
+          followCursor: true,
+          arrow: true,
+          trigger: 'mouseenter focus click',
+          popperOptions: {
+            strategy: 'fixed', modifiers: [{name: 'flip', options: {fallbackPlacements: ['bottom', 'left']},},{name: 'preventOverflow', options: {altAxis: true,tether: false,},},],
+          },
+        });
+      </script>
       <script>
       	var tabs = new Tabby('[data-tabs]');
       </script>

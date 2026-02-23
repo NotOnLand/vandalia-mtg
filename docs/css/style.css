@@ -42,6 +42,7 @@ img,
 svg,
 video {
   vertical-align: middle;
+  max-width: 100%;
 }
 fieldset {
   border: 0;
@@ -65,7 +66,6 @@ textarea {
   position: absolute;
   white-space: nowrap;
   width: 1px;
-  /* 1 */
 }
 .visually-hidden.focusable:active,
 .visually-hidden.focusable:focus {
@@ -89,10 +89,22 @@ textarea {
   clear: both;
 }
 
+:target::before {
+  content: "";
+  display: block;
+  height: 130px; /* fixed header height*/
+  margin: -130px 0 0; /* negative fixed header height */
+}
+
+a, a:hover, a:focus, a:active {
+  color: inherit;
+}
 /* End Boilerplate styles */
 
 body {
   margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 #page {
@@ -102,7 +114,6 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
 header {
@@ -112,7 +123,7 @@ header {
   font-size: 1.1em;
   position: sticky;
   top: -6.4rem;
-  z-index: 1;
+  z-index: 5;
   border-bottom: 2px var(--primary-bg-color) solid;
 }
 
@@ -143,55 +154,106 @@ h1, .subtitle {
   font-size: 1.33em;
 }
 
-article {
+main {
   background-color: var(--primary-bg-color);
-  padding: 0 2rem 2rem;
+  /*padding: 0 2rem 2rem;*/
+  padding: 0 6vw 6vw;
+  padding: 0 6dvw 6dvw;
 }
 
-.faction {
+section {
   margin-bottom: 1rem;
 }
 
-.faction::after {
+section::after {
   content: "";
   clear: both;
   display: table;
 }
 
-.faction > span {
+section > span {
   display: inline-block;
   font-size: 1.5em;
 }
 
-.faction > span > span {
+section > span > span {
   display: inline-block;
   white-space: nowrap;
 }
 
-.faction > span h3 {
+span h3 {
   display: inline-block;
+  margin: .1rem;
 }
 
-.faction i.ms {
+section span i.ms {
   font-size: .8em;
   margin: 0 .1rem 0;
-  vertical-align:
-baseline;
+  vertical-align: baseline;
 }
 
-.faction .card {
+section .card {
   max-width: 300px;
   float: right;
   margin: .6rem -.6rem .6rem .6rem;
 }
 
-.faction:nth-of-type(even) .card {
+section:nth-of-type(even) .card {
   margin: .6rem .6rem .6rem -.6rem;
   float: left;
 }
 
+article a {
+  background-image: linear-gradient(to bottom, white 0%, white 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 1px 1px;
+  color: inherit;
+  text-decoration: none;
+}
+
+article a:hover {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-15px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ffffff' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-size: auto 4px;
+}
+
 img.card {
   border-radius: 4%;
+}
+
+nav.subnav {
+  display: flex;
+  width: 100%;
+  /*margin: -1rem auto 1rem;
+  padding: .2rem 0;*/
+  margin: -1rem -2vw 1rem;
+  margin: -1rem -2dvw 1rem;
+  padding: .2rem 2vw;
+  padding: .2rem 2dvw;
+  justify-content: center;
+  position: sticky;
+  top: 3.8rem;
+  background-color: rgba(54, 98, 68, 0.7);
+  z-index: 1;
+}
+
+nav.subnav a {
+  display: block;
+  background-color: #2c5b3b;
+  transition: background-color .2s;
+  padding: .4rem;
+  margin: .2rem;
+  border-radius: 20%;
+  flex-shrink: 1;
+  line-height: 1px;
+}
+
+nav.subnav a:hover {
+  background-color: #5a956c;
+}
+
+nav.subnav a.active {
+  background-color: #5a956c;
 }
 
 footer {
@@ -213,6 +275,7 @@ table {
 
 td, th {
   padding: 8px;
+  hyphens: manual;
 }
 
 th {
@@ -228,50 +291,143 @@ td:not(:last-child), th:not(:last-child) {
   white-space: nowrap;
 }
 
+td i.ms:first-child {
+  margin-right: 0.3rem;
+}
+
 tr:nth-child(odd){
   background-color: rgba(255,255,255, 0.1);
 }
 
 tr:hover {
-  background-color: rgba(255,255,255, 0.3);
+  background-color: rgba(22, 66, 28, 0.3);
 }
-
 
 th h3 {
   margin: .8rem 0;
 }
 
-.faction h3 {
-  margin: .1rem;
-
+span[data-tippy-content] {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
-@media (max-width: 675px) {
+span[data-tippy-content]::after {
+  content: attr(data-text);
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+}
+
+span[data-tippy-content]:hover {
+  text-shadow: 0px 0px 1.5px white;
+}
+
+.tippy-box {
+  border-radius: 1rem;
+}
+
+.tippy-content {
+  padding: 0.4rem;
+}
+
+#mechanics ul {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  padding: 0;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+#mechanics ul li {
+  margin: .2rem;
+}
+
+@media (max-width: 750px) {
+  nav.subnav {
+    margin: -1rem -6vw 1rem;
+    margin: -1rem -6dvw 1rem;
+    padding: .2rem 0;
+    width: 100vw;
+    width: 100dvw;
+  }
   .widthbox {
     width: 100%;
   }
-
+  table {
+    width: calc(100% + 8vw);
+    width: calc(100% + 8dvw);
+    margin: 0 -4vw;
+    margin: 0 -4dvw;
+  }
+  td:not(:last-child), th:not(:last-child), span[data-tippy-content] {
+    white-space: normal;
+  }
+  td i.ms:first-child {
+    margin-right: 0;
+    margin-bottom: .3rem;
+  }
 }
 
 @media (max-width: 550px) {
   header {
     padding: 4vw 1vw 0;
+    padding: 4dvw 1dvw 0;
     font-size: 3vw;
+    font-size: 3dvw;
     top: -16vw;
+    top: -16dvw;
   }
   header div.widthbox {
     margin-left: 6vw;
+    margin-left: 6dvw;
     margin-right: 6vw;
+    margin-right: 6dvw;
+    max-width: 88vw;
+    max-width: 88dvw;
   }
   .headerimg {
     height: 9vw;
+    height: 9dvw;
   }
-  .faction .card {
+  section .card {
     max-width: 100%;
     margin-left: 0;
     margin-right: 0;
   }
+  nav.subnav {
+    justify-content: space-evenly;
+    margin-left: -6vw;
+    margin-left: -6dvw;
+    margin-right: -6vw;
+    margin-right: -6dvw;
+    max-width: 98vw;
+    max-width: 98dvw;
+    padding-left: 1vw;
+    padding-left: 1dvw;
+    padding-right: 1vw;
+    padding-right: 1dvw;
+    top: calc(7.8vw + 1rem);
+    top: calc(7.8dvw + 1rem);
+  }
+  nav.subnav a {
+    padding: 1vw;
+    padding: 1dvw;
+    margin: 0.5vw 0;
+    margin: 0.5dvw 0;
+  }
+  nav.subnav a i {
+    font-size: 5vw;
+    font-size: 5dvw;
+  }
+  td i.ms {
+    font-size: 1.25em;
+  }
   footer {
     padding: 4vw 7vw;
+    padding: 4dvw 7dvw;
   }
 }

@@ -10,7 +10,7 @@
  * The tablist
  */
 
-a, a:hover, a:focus, a:active {
+[role="tablist"] a, [role="tablist"] a:hover, [role="tablist"] a:focus, [role="tablist"] a:active {
    text-decoration: none;
    color: inherit;
 }
@@ -53,6 +53,7 @@ a, a:hover, a:focus, a:active {
   border-top-left-radius: 0.5em;
   border-top-right-radius: 0.5em;
   margin-bottom: -1px;
+  transition: background-color .2s;
   /**
 	 * Active tab styling
 	 */
