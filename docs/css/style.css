@@ -90,10 +90,11 @@ textarea {
 }
 
 :target::before {
+  --target-fix: 120px;
   content: "";
   display: block;
-  height: 130px; /* fixed header height*/
-  margin: -130px 0 0; /* negative fixed header height */
+  height: var(--target-fix); /* fixed header height*/
+  margin: -var(--target-fix) 0 0; /* negative fixed header height */
 }
 
 a, a:hover, a:focus, a:active {
@@ -114,6 +115,8 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 header {
@@ -159,6 +162,10 @@ main {
   /*padding: 0 2rem 2rem;*/
   padding: 0 6vw 6vw;
   padding: 0 6dvw 6dvw;
+}
+
+article {
+  min-height: 100%;
 }
 
 section {
@@ -307,6 +314,11 @@ th h3 {
   margin: .8rem 0;
 }
 
+td hr {
+  margin: 0.7rem 0 .3rem;
+  border-top-style: dotted;
+}
+
 span[data-tippy-content] {
   text-decoration: underline;
   text-decoration-style: dotted;
@@ -346,6 +358,16 @@ span[data-tippy-content]:hover {
   margin: .2rem;
 }
 
+.lore {
+  font-style: italic;
+}
+
+ol {
+  display: inline-block;
+  padding-left: 1rem;
+  margin: 0;
+}
+
 @media (max-width: 750px) {
   nav.subnav {
     margin: -1rem -6vw 1rem;
@@ -373,6 +395,9 @@ span[data-tippy-content]:hover {
 }
 
 @media (max-width: 550px) {
+  :target::before {
+    --target-fix: 22vw;
+  }
   header {
     padding: 4vw 1vw 0;
     padding: 4dvw 1dvw 0;
