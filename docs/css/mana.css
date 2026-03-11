@@ -241,6 +241,7 @@
 }
 .ms-token::before {
   content: "\e96d";
+  font-size: 1.3em;
 }
 .ms-tribal::before, .ms-multiple::before {
   content: "\e925";
@@ -2206,4 +2207,8 @@ span.ms-half > .ms-cost {
   background: linear-gradient(0deg, #c8913b 0%, #ecc65a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.ms-1x {
+  font-size: 1.5em;
 }

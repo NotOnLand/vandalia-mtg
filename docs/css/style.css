@@ -199,13 +199,13 @@ section span i.ms {
   vertical-align: baseline;
 }
 
-section .card {
+section .card:not(.lazy) {
   max-width: 300px;
   float: right;
   margin: .6rem -.6rem .6rem .6rem;
 }
 
-section:nth-of-type(even) .card {
+section:nth-of-type(even) .card:not(.lazy) {
   margin: .6rem .6rem .6rem -.6rem;
   float: left;
 }
@@ -224,8 +224,11 @@ article a:not(.button):hover {
   background-size: auto 4px;
 }
 
-img.card {
-  border-radius: 4%;
+img.card, .lite-light img {
+  background-color: transparent;
+  border-radius: 5%;
+  max-width: 100vw;
+  max-width: 100dvw;
 }
 
 nav.subnav {
@@ -302,11 +305,11 @@ td i.ms:first-child {
   margin-right: 0.3rem;
 }
 
-tr:nth-child(odd){
+tr:nth-child(odd), details:nth-child(odd) {
   background-color: rgba(255,255,255, 0.1);
 }
 
-tr:hover {
+tr:hover, details > summary:hover {
   background-color: rgba(22, 66, 28, 0.3);
 }
 
@@ -368,6 +371,139 @@ ol {
   margin: 0;
 }
 
+/*  Accordion sections  */
+
+.accordion > input[type="checkbox"] {
+  position: absolute;
+  left: -100vw;
+}
+
+.accordion .content {
+  display: none;
+  /*height: 0;
+  transition: height 0.3s ease;*/
+}
+
+.accordion {
+  margin-bottom: 1rem;
+}
+
+.accordion > input[type="checkbox"]:checked ~ .content {
+  /*height: auto;
+  padding: 15px;
+  overflow: visible;*/
+  display: block;
+  border: 1px solid #e8e8e8;
+  border-top: 0;
+  border-radius: 0 0 .4rem .4rem;
+  overflow: hidden;
+}
+
+.accordion .handle {
+  margin: 0;
+  font-size: 1.125em;
+  line-height: 1.2em;
+}
+
+.accordion label {
+  display: block;
+  color: #333;
+  cursor: pointer;
+  padding: .5rem;
+  background: #e8e8e8;
+  border-radius: 0.4rem;
+}
+
+.accordion > input[type="checkbox"]:checked ~ .handle label {
+  border-radius: .4rem .4rem 0 0;
+}
+
+.accordion label:hover,
+.accordion label:focus {
+  background: #d8d8d8;
+}
+
+details > summary {
+  cursor: pointer;
+  padding: 0.3rem 0.7rem;
+  width: 100%;
+}
+
+details > summary::marker {
+  content: '';
+}
+
+.accordion .handle label:before, details > summary:before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 640'%3E%3Cpath d='M471.1 297.4C483.6 309.9 483.6 330.2 471.1 342.7L279.1 534.7C266.6 547.2 246.3 547.2 233.8 534.7C221.3 522.2 221.3 501.9 233.8 489.4L403.2 320L233.9 150.6C221.4 138.1 221.4 117.8 233.9 105.3C246.4 92.8 266.7 92.8 279.2 105.3L471.2 297.3z'/%3E%3C/svg%3E");
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+  height: 1.1em;
+  width: 0.9em;
+}
+
+.accordion > input[type="checkbox"]:checked ~ .handle label:before, details[open] > summary:before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 640'%3E%3Cpath d='M297.4 470.6C309.9 483.1 330.2 483.1 342.7 470.6L534.7 278.6C547.2 266.1 547.2 245.8 534.7 233.3C522.2 220.8 501.9 220.8 489.4 233.3L320 402.7L150.6 233.4C138.1 220.9 117.8 220.9 105.3 233.4C92.8 245.9 92.8 266.2 105.3 278.7L297.3 470.7z'/%3E%3C/svg%3E");
+}
+
+details > summary:before {
+  filter: invert(100);
+  vertical-align: baseline;
+}
+
+.cardbox {
+  display: grid;
+  grid-gap: .5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  width: calc(100% - 1rem);
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.cardbox .card {
+  width: 100%;
+  height: auto;
+  cursor: zoom-in;
+}
+
+i.rarity::before {
+  width: 1.7rem;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+i.rarity.common::before {
+  content: url("../img/setsymbol_C.svg");
+}
+
+i.rarity.uncommon::before {
+  content: url("../img/setsymbol_U.svg");
+}
+
+i.rarity.rare::before {
+  content: url("../img/setsymbol_R.svg");
+}
+
+i.rarity.mythic::before {
+  content: url("../img/setsymbol_M.svg");
+}
+
+details .card.lazy {
+  opacity: 0;
+}
+details .card:not(.initial) {
+  transition: opacity 1s;
+}
+details .card.initial,
+details .card.loaded,
+details .card.error {
+  opacity: 1;
+}
+
+details .card:not([src]) {
+  visibility: hidden;
+}
+
 @media (max-width: 750px) {
   nav.subnav {
     margin: -1rem -6vw 1rem;
@@ -391,6 +527,12 @@ ol {
   td i.ms:first-child {
     margin-right: 0;
     margin-bottom: .3rem;
+  }
+  .accordion {
+    width: 96vw;
+    width: 96dvw;
+    margin-left: -4vw;
+    margin-left: -4dvw;
   }
 }
 
@@ -418,7 +560,7 @@ ol {
     height: 9vw;
     height: 9dvw;
   }
-  section .card {
+  section .card:not(.lazy) {
     max-width: 100%;
     margin-left: 0;
     margin-right: 0;
