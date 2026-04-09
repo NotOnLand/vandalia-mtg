@@ -226,6 +226,7 @@
 }
 .ms-planeswalker::before, .ms-watermark-planeswalker::before {
   content: "\e623";
+  line-height: 1.4em;
 }
 .ms-rarity::before {
   content: "\e96c";
