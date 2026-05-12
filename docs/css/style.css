@@ -229,6 +229,8 @@ img.card, .lite-light img {
   border-radius: 5%;
   max-width: 100vw;
   max-width: 100dvw;
+  max-height: 100vh;
+  max-height: 100dvh;
 }
 
 nav.subnav {
@@ -342,6 +344,7 @@ span[data-tippy-content]:hover {
 
 .tippy-box {
   border-radius: 1rem;
+  background-color: transparent;
 }
 
 .tippy-content {
