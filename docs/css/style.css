@@ -13,6 +13,8 @@
 html {
   --primary-bg-color: #366244;
   --primary-text-color: white;
+  --spin-horiz: 2vw;
+  --spin-vert: -30vw;
   background-color: var(--primary-bg-color);
   color: var(--primary-text-color);
   font-family: sans-serif;
@@ -89,12 +91,12 @@ textarea {
   clear: both;
 }
 
-:target::before {
+section:target::before {
   --target-fix: 120px;
   content: "";
   display: block;
   height: var(--target-fix); /* fixed header height*/
-  margin: -var(--target-fix) 0 0; /* negative fixed header height */
+  margin: calc(var(--target-fix) * -1) 0 0; /* negative fixed header height */
 }
 
 a, a:hover, a:focus, a:active {
@@ -205,9 +207,14 @@ section .card:not(.lazy) {
   margin: .6rem -.6rem .6rem .6rem;
 }
 
-section:nth-of-type(even) .card:not(.lazy) {
+section:nth-of-type(even) .card:not(.lazy){
   margin: .6rem .6rem .6rem -.6rem;
   float: left;
+}
+
+#construction {
+  float: left;
+  max-width: calc(100% - 320px);
 }
 
 article a:not(.button) {
@@ -231,6 +238,69 @@ img.card, .lite-light img {
   max-width: 100dvw;
   max-height: 100vh;
   max-height: 100dvh;
+}
+
+/**
+ * Recreating Tabby style
+ */
+[role="tablist"] a, [role="tablist"] a:hover, [role="tablist"] a:focus, [role="tablist"] a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+[role="tablist"] {
+ list-style: none;
+ margin: 1rem 0 0;
+ padding: 0;
+ width: 100%;
+ max-width: 510px;
+ display: flex;
+ flex-wrap: nowrap;
+ align-items: baseline;
+ justify-content: space-between;
+}
+
+[role="tablist"] * {
+ -webkit-box-sizing: border-box;
+         box-sizing: border-box;
+}
+
+[role="tablist"] li {
+ display: inline-block;
+}
+
+[role="tab"] {
+ border-bottom: 4px solid transparent;
+ border-bottom-color: #16421c;
+ display: block;
+ padding: 0.5em 1em;
+ text-decoration: none;
+ background-color: #2c5b3b;
+ border-top-color: transparent;
+ border-top-left-radius: 0.5em;
+ border-top-right-radius: 0.5em;
+ margin-bottom: -1px;
+ transition: background-color .2s;
+ }
+
+[role="tab"] a {
+ color: white;
+}
+
+[role="tab"][aria-selected="true"] {
+ background-color: #366244;
+ border-color: #366244;
+}
+
+@media (min-width: 30em) {
+ [role="tab"][aria-selected="true"] {
+   border: 4px solid transparent;
+   border-bottom-color: #366244;
+ }
+}
+
+[role="tab"]:hover:not([aria-selected="true"]) {
+ background-color: #5a956c;
 }
 
 nav.subnav {
@@ -268,6 +338,10 @@ nav.subnav a.active {
   background-color: #5a956c;
 }
 
+.embiggen {
+  font-size: 2em;
+}
+
 footer {
   padding: 1rem 2rem;
   font-size: 0.8em;
@@ -278,6 +352,56 @@ footer {
 footer p {
   margin: 0;
   color: rgba(255, 255, 255, 0.5);
+}
+
+#banner {
+  background: url("../img/logo_background.jpg") center/cover no-repeat fixed;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  margin: 1rem -6vw 0;
+  margin: 1rem -6dvw 0;
+  max-height: 30vw;
+  max-height: 30dvw;
+}
+
+#banner > * {
+  grid-area: 1 / 1 / 2 / 2;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 50vw;
+  max-width: 50dvw;
+  display: block;
+}
+
+#banner img {
+  z-index: 1;
+}
+
+#banner .spinner {
+  height: 100%;
+  mask: url("../img/vandalia_logo_mask.png") no-repeat 50% 50% /80%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+#banner .spinner::before {
+  content: '';
+  display: block;
+  background: conic-gradient(from 90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 15%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.8) 65%, rgba(0,0,0,0.4) 85%, rgba(0,0,0,0.8) 100%);
+  width: 100%;
+  aspect-ratio: 1/1;
+  z-index: -1;
+  transform: translate(var(--spin-horiz), var(--spin-vert)) rotate(0deg);
+  animation: spinner 10s linear infinite;
+}
+
+@keyframes spinner {
+  100% {
+        -webkit-transform:translate(var(--spin-horiz), var(--spin-vert)) rotate(360deg);
+        transform:translate(var(--spin-horiz), var(--spin-vert)) rotate(360deg);
+    }
 }
 
 table {
@@ -349,6 +473,11 @@ span[data-tippy-content]:hover {
 
 .tippy-content {
   padding: 0.4rem;
+}
+
+.tippy-content img.card {
+  max-height: 70vh;
+  max-height: 70dvh;
 }
 
 #mechanics ul {
@@ -518,6 +647,10 @@ details .card:not([src]) {
   .widthbox {
     width: 100%;
   }
+  #banner {
+    max-height: 40vw;
+    max-height: 40dvw;
+  }
   table {
     width: calc(100% + 8vw);
     width: calc(100% + 8dvw);
@@ -536,6 +669,10 @@ details .card:not([src]) {
     width: 96dvw;
     margin-left: -4vw;
     margin-left: -4dvw;
+  }
+  .tippy-content img.card {
+    max-height: 80vh;
+    max-height: 80dvh;
   }
 }
 
@@ -563,7 +700,7 @@ details .card:not([src]) {
     height: 9vw;
     height: 9dvw;
   }
-  section .card:not(.lazy) {
+  section .card:not(.lazy), #construction {
     max-width: 100%;
     margin-left: 0;
     margin-right: 0;
