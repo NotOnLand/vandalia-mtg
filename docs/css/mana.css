@@ -1512,8 +1512,8 @@
   color: #fff;
 }
 .ms-cost.ms-untap {
-  background-color: #111;
-  color: #fff;
+  background-color: #beb9b2;
+  color: #000;
 }
 .ms-cost.ms-shadow {
   box-shadow: -0.06em 0.07em 0 #111, 0 0.06em 0 #111;

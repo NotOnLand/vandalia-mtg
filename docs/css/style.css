@@ -176,6 +176,15 @@ h1, .subtitle {
   margin: -.2em 0;
 }
 
+h2 {
+  font-size: 2.3em;
+  margin: 1rem 0;
+}
+h3 {font-size: 1.17em;}
+h4 {font-size: 1em;}
+h5 {font-size: .83em;}
+h6 {font-size: .67em;}
+
 .subtitle {
   font-size: 1.33em;
 }
@@ -185,6 +194,7 @@ main {
   /*padding: 0 2rem 2rem;*/
   padding: 0 6vw 6vw;
   padding: 0 6dvw 6dvw;
+  position: relative;
 }
 
 article {
@@ -204,6 +214,7 @@ section::after {
 section > span {
   display: inline-block;
   font-size: 1.5em;
+  margin-bottom: -1rem;
 }
 
 section > span > span {
@@ -222,15 +233,19 @@ section span i.ms {
   vertical-align: baseline;
 }
 
-section .card:not(.lazy) {
+section .card:not(.lazy), #rivalries .card:nth-of-type(odd):not(.lazy)  {
   max-width: 300px;
   float: right;
   margin: .6rem -.6rem .6rem .6rem;
 }
 
-section:nth-of-type(even) .card:not(.lazy){
+section:nth-of-type(even) .card:not(.lazy), #rivalries .card:nth-of-type(even):not(.lazy) {
   margin: .6rem .6rem .6rem -.6rem;
   float: left;
+}
+
+#rivalries .ms-ur, #rivalries .ms-bg, #rivalries .ms-rw, #rivalries .ms-gu, #rivalries .ms-wb {
+  vertical-align: -4px;
 }
 
 #construction {
@@ -359,8 +374,29 @@ nav.subnav a.active {
   background-color: #5a956c;
 }
 
-.embiggen {
-  font-size: 2em;
+.uppy {
+  position: absolute;
+  top: 120vh;
+  top: 120dvh;
+  bottom: 3rem;
+  right: 2rem;
+}
+
+.uppy_link {
+  position: sticky;
+  top: 90vh;
+  top: 90dvh;
+  opacity: .2;
+  transition: opacity .3s ease;
+}
+
+.uppy_link i {
+  background-color: #beb9b2;
+  color: #000;
+}
+
+.uppy_link:hover {
+  opacity: 1;
 }
 
 footer {
@@ -501,7 +537,7 @@ span[data-tippy-content]:hover {
   max-height: 70dvh;
 }
 
-#mechanics ul {
+#mechanics ul, #lore ul {
   list-style: none;
   display: flex;
   width: 100%;
@@ -510,7 +546,7 @@ span[data-tippy-content]:hover {
   flex-wrap: wrap;
 }
 
-#mechanics ul li {
+#mechanics ul li, #lore ul li {
   margin: .2rem;
 }
 
@@ -753,6 +789,12 @@ details .card:not([src]) {
   }
   td i.ms {
     font-size: 1.25em;
+  }
+  .uppy {
+    right: 1rem;
+  }
+  .uppy_link i {
+    font-size: 2em;
   }
   footer {
     padding: 4vw 7vw;
